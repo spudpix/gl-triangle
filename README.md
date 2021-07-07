@@ -1,8 +1,15 @@
 # OpenGL Triangle
 This repository contains all the code necessary to render a triangle in OpenGL. All relevant code is located in main.cpp
 
+![OpenGL-triangle](https://user-images.githubusercontent.com/29679352/124736324-cb671a00-df0e-11eb-8b36-df605d42e17e.PNG)
 
-![Screenshot_20210706_101757](https://user-images.githubusercontent.com/29679352/124575723-8b873080-de43-11eb-8632-21f297acf77b.png)
+## How to use
+
+Navigate to your code folder and clone the repository using the command:
+```
+git clone --recursive https://github.com/spudpix/gl-triangle.git
+```
+To build the project, open the CMakeLists.txt file in the root folder in Visual Studio and compile. You can also use CMake to built a project file for your IDE of choice.
 
 ## Dependencies 
 
@@ -15,10 +22,4 @@ This repository contains all the code necessary to render a triangle in OpenGL. 
 * [The Cherno](https://www.youtube.com/user/TheChernoProject)
 * [Victor Gordan](https://www.youtube.com/channel/UC8WizezjQVClpWfdKMwtcmw)
 
-## How to use
 
-Navigate to your code folder and clone the repository using the command:
-```
-git clone --recursive https://github.com/spudpix/gl-triangle.git
-```
-To build the project, open the CMakeLists.txt file in the root folder in Visual Studio and compile. You can also use CMake to built a project file for your IDE of choice.
