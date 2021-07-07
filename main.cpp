@@ -7,26 +7,30 @@
 // Shader source code stored as char arrays
 //-------------------------------------------------
 
-const char* vertexShaderCode = "#version 450 core\n"
+const char* vertexShaderCode = "#version 330 core\n"
 "layout (location = 0) in vec3 aPos;\n"
+"layout (location = 1) in vec3 aColor;\n"
+"out vec3 ourColor;\n"
 "void main()\n"
 "{\n"
-"   gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);\n"
+"   gl_Position = vec4(aPos, 1.0);\n"
+"   ourColor = aColor;\n"
 "}\0";
 
-const char* fragmentShaderCode = "#version 450 core\n"
+const char* fragmentShaderCode = "#version 330 core\n"
+"in vec3 ourColor;\n"
 "out vec4 FragColor;\n"
 "void main()\n"
 "{\n"
-"   FragColor = vec4(1.0f, 0.9f, 0.5f, 1.0f);\n"
+"   FragColor = vec4(ourColor, 1.0);\n"
 "}\n\0";
 
 int main()
 {
 	// GLFW initialization and specifiying OpenGL window context version 
 	glfwInit();
-	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
-	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 5);
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
 	// Creates the actual window, throws an error in case of failure
@@ -102,16 +106,18 @@ int main()
 	//-------------------------------------------------
 
 	float vertices[] = {
-		-0.5f, -0.5f, 0.0f,
-		 0.5f, -0.5f, 0.0f,
-		 0.0f,  0.5f, 0.0f
+		// Vertex Positions	// Vertex Colour information
+		-0.5f, -0.5f, 0.0f, 0.0f, 0.0f, 1.0f,
+		 0.5f, -0.5f, 0.0f, 0.0f, 1.0f, 0.0f,
+		 0.0f,  0.5f, 0.0f, 1.0f, 0.0f, 0.0f
 	};
 
 	//-------------------------------------------------
 	// OpenGL buffers
 	//-------------------------------------------------
 
-	unsigned int VBO, VAO;
+	unsigned int VBO;
+	unsigned int VAO;
 
 	glGenVertexArrays(1, &VAO);
 	glBindVertexArray(VAO); 	// OpenGL core profile requires a VAO to be bound
@@ -120,10 +126,13 @@ int main()
 	glBindBuffer(GL_ARRAY_BUFFER, VBO);
 	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);		// Copies the data from system RAM to GPU RAM
 
-	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);	// Defines the data layout of the VBO and stores it in the VAO
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);	// Defines the data layout of the VBO and stores it in the VAO
 	glEnableVertexAttribArray(0);
 
-	glBindBuffer(GL_ARRAY_BUFFER, 0);	// we can unbind the VBO because it has be registered to the VAO using glVertexAttribPointer
+	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(3*sizeof(float)));
+	glEnableVertexAttribArray(1);
+
+	glBindBuffer(GL_ARRAY_BUFFER, 1);	// we can unbind the VBO because it has be registered to the VAO using glVertexAttribPointer
 
 	//-------------------------------------------------
 	// Main render loop
