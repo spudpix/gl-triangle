@@ -33,7 +33,7 @@ C++ is still the standard for game engines because of the massive amount of libr
 API stands for Application Programming Interface. It’s a fancy way of calling the packaging of complex functions into simpler function calls to make programs talk to each other more easily.
 
 #### Q: Do I need to be good at maths to be good at programming?
-Ah, the M-word, don't worry there are plenty of maths libraries written by maths people available out there so you don't have to write you own equations. It's a bit like using a calculator, you can use one by telling it what to do but it definitely helps to understand what it does under the hood. 
+Ah, the M-word, don't worry there are plenty of maths libraries written by maths people available out there so you don't have to write you own equations. It's a bit like using a calculator, you only need to know how to use it, of course knowing what it does under the hood is better but not strictly necessary. Also bear in mind that by the time you realise you need to learn some maths, you'll have no issues learning things like linear algebra. 
 
 #### Q: Why a triangle?
 Everything in games is rendered as triangles. If you can make one appear on screen, making millions more isn’t that much harder, relatively speaking. Everything else is just fancy piping to make things look pretty and usable.
