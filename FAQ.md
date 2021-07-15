@@ -26,6 +26,9 @@ For educational purposes. Skills learned from developing an engine are not limit
 #### Q: I have heard that making a game engine is extremely hard and not worth the effort, is it true?
 This is based on the assumption that the goal is to make a full game and have it published. Making games is hard already and it’s understandable that making an engine isn’t ideal in that case. However, our goal here is learn how to make games from scratch without worrying about a publishing deadline.
 
+#### Q: Is learning OpenGL useful even if I plan to use a game engine?
+This will definitely make you better at using other game engines as you'll better understand how they work at a deeper level.
+
 #### Q: What language will I be using?
 C++ is still the standard for game engines because of the massive amount of libraries available and its speed. You may also use scripting languages such as Lua, Python or Javascript
 
