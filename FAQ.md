@@ -1,5 +1,4 @@
-
-# Welcome to Game Engine Enthusiasts
+# Welcome 
 
 #### Q: Who is this community for?
 -   You like to learn how things work
