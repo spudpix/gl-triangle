@@ -19,7 +19,7 @@ To build the project, open the CMakeLists.txt file in the root folder in Visual 
 ## Learning Resource
 
 * [LearnOpenGL](https://learnopengl.com/)
-* [javidx9] (https://youtube.com/c/javidx9)(game focused C++) 
+* [javidx9](https://youtube.com/c/javidx9) (game focused C++) 
 * [The Book of Shaders](https://thebookofshaders.com/) 
 * [ThinMatrix](https://youtube.com/playlist?list=PLRIWtICgwaX0u7Rf9zkZhLoLuZVfUksDP) (in Java, but excellent OpenGL explanations) 
 * [The Cherno](https://www.youtube.com/user/TheChernoProject)
